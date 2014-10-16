@@ -11,13 +11,15 @@ import geomerative.*; // require geomerative library
 
 RShape myIcon;
 float segLength = 10;
+float sizeX = 0;
+float sizeY = 0;
 
 void setup() {
   RG.init(this); // initalise the library 
-  size(500, 500, P3D);
+  size(500, 500);
   background(255);
   smooth(); 
-  frameRate(20);
+  frameRate(50);
 
   myIcon = RG.loadShape("icon.svg");
 }
@@ -29,7 +31,7 @@ void draw() {
 	scale(2);
 	RG.shape(myIcon);
 
-	// Initialises a new variable, textPoints, as an array and stores the points of the SVG inside.
+	// Initialises a new variable, imagePoints, as an array and stores the points of the SVG inside.
 	RPoint[] imagePoints = myIcon.getPoints();
 
 	// Set a distance of segLength between every shape below.
@@ -37,11 +39,14 @@ void draw() {
 	 
 	// If i is smaller than the number of points in the image (length of array), increment by 1, and draw a rectangle at each point.
 	// For-Loop contains concepts discovered at http://freeartbureau.org/ 
-	for (int i=0; i<imagePoints.length; i++) {
+	for (int i = 0; i < imagePoints.length; i++) {
 		noStroke();
-		fill(random(255), random(255), random(255) );
-		rect(imagePoints[i].x, imagePoints[i].y, mouseX/80, mouseY/80);
-		// segLength = random(10);
+		// imagePoints[i].x ++;
+		// imagePoints[i].y ++;
+		// println(imagePoints[i].x);
+		rect(imagePoints[i].x, imagePoints[i].y, mouseX/40, mouseY/40);
 	}
 
+
   }
+
