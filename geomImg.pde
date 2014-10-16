@@ -35,7 +35,7 @@ void draw() {
 	// Set a distance of segLength between every shape below.
 	RCommand.setSegmentLength(segLength);
 	 
-	// If i is smaller than the number of points in the image (length of array), increment by 1, and draw ellipse at each point.
+	// If i is smaller than the number of points in the image (length of array), increment by 1, and draw a rectangle at each point.
 	// For-Loop contains concepts discovered at http://freeartbureau.org/ 
 	for (int i=0; i<imagePoints.length; i++) {
 		noStroke();

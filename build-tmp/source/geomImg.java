@@ -42,26 +42,31 @@ public void setup() {
   
 public void draw() {
 
+pushMatrix();
 	background(255);
 	translate(18, 18);
 	scale(2);
 	RG.shape(myIcon);
 
-	// Initialises a new variable, textPoints, as an array and stores the points of the SVG inside.
-	RPoint[] imagePoints = myIcon.getPoints();
+	rotateX(mouseX);
+	rotateY(mouseY);
+	rotateZ(mouseY*2);
+popMatrix();
 
-	// Set a distance of segLength between every shape below.
-	RCommand.setSegmentLength(segLength);
+	// // Initialises a new variable, textPoints, as an array and stores the points of the SVG inside.
+	// RPoint[] imagePoints = myIcon.getPoints();
+
+	// // Set a distance of segLength between every shape below.
+	// RCommand.setSegmentLength(segLength);
 	 
-
-	// If i is smaller than the number of points in the image (length of array), increment by 1, and draw ellipse at each point.
-	// For-Loop contains concepts discovered at http://freeartbureau.org/ 
-	for (int i=0; i<imagePoints.length; i++) {
-		noStroke();
-		fill(random(255), random(255), random(255) );
-		rect(imagePoints[i].x, imagePoints[i].y, mouseX/80, mouseY/80);
-		// segLength = random(10);
-	}
+	// // If i is smaller than the number of points in the image (length of array), increment by 1, and draw ellipse at each point.
+	// // For-Loop contains concepts discovered at http://freeartbureau.org/ 
+	// for (int i=0; i<imagePoints.length; i++) {
+	// 	noStroke();
+	// 	fill(random(255), random(255), random(255) );
+	// 	rect(imagePoints[i].x, imagePoints[i].y, mouseX/80, mouseY/80);
+	// 	// segLength = random(10);
+	// }
 
   }
   static public void main(String[] passedArgs) {
